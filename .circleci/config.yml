@@ -8,6 +8,12 @@ jobs:
       - checkout
       - setup_remote_docker
       - run:
+          name: Print Environment Variables
+          command: |
+            echo "AWS_ACCOUNT_ID: $AWS_ACCOUNT_ID"
+            echo "AWS_REGION: $AWS_REGION"
+            echo "ECR_REPO: $ECR_REPO"
+      - run:
           name: Build Docker Image
           command: |
             docker build -t $ECR_REPO:$CIRCLE_SHA1 .
@@ -23,4 +29,4 @@ workflows:
   project-workflow:
     jobs:
       - build:
-          context: org-global  # Asegúrate de que este contexto contenga las variables de entorno necesarias
+          context: org-globa  # Asegúrate de que este contexto contenga las variables de entorno necesarias
