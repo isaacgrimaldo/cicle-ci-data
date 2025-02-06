@@ -1,0 +1,8 @@
+opencv-python
+numpy
+Pillow
+face-recognition
+face_recognition_models
+setuptools
+mariadb
+boto3
