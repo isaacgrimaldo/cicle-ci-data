@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: cimg/aws  # Utiliza la imagen oficial de AWS CLI de CircleCI
+      - image: cimg/aws-cli  # Cambiado a la imagen que incluye AWS CLI
     steps:
       - checkout
       - setup_remote_docker
