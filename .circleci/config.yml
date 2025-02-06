@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: cimg/base:stable
+      - image: cimg/aws-cli  # Cambiado a la imagen que incluye AWS CLI
     steps:
       - checkout
       - setup_remote_docker
@@ -29,4 +29,4 @@ workflows:
   project-workflow:
     jobs:
       - build:
-          context: org-globa  # Asegúrate de que este contexto contenga las variables de entorno necesarias
+          context: org-global  # Asegúrate de que este contexto contenga las variables de entorno necesarias
